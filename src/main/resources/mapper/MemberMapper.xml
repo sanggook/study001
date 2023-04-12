@@ -13,4 +13,17 @@
         WHERE
             1=1            
     </select>
+
+    <select id="getMember" resultType="Member">
+        SELECT 
+            SEQ
+            , ID
+            , MEMBER_NAME
+            , MEMBER_TAG
+        FROM 
+            STUDY_MEMBER
+        WHERE
+            1=1
+            AND ID = #{userId}
+    </select>
 </mapper>

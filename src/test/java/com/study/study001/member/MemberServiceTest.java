@@ -21,5 +21,14 @@ public class MemberServiceTest {
         List<Member> memberList = memberService.getMemberList();
         memberList.stream().forEach(m -> System.out.println(m.toString()));
     }
+
+    @Test
+    @DisplayName("멤버 한건 조회")
+    void testGetMember(){
+        String userId = "admin";
+        Member member = memberService.getMember(userId);
+        System.out.println(member.toString());
+
+    }
     
 }
