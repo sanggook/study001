@@ -10,3 +10,4 @@
   - 3.0과 2.0 차이 확인
 - ExceptionHandler 적용
   - Response 타입에 따라 분기 가능한지 확인
+- swagger 적용
