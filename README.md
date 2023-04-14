@@ -8,5 +8,5 @@
   - cache 적용 할수 있는지 체크
 - ehcache 적용
   - 3.0과 2.0 차이 확인
-- GlobalExceptionHandler 적용
+- ExceptionHandler 적용
   - Response 타입에 따라 분기 가능한지 확인
