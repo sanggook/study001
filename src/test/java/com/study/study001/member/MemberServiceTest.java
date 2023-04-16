@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.study.study001.domain.dto.Member;
+import com.study.study001.domain.dto.MemberListDto;
 import com.study.study001.service.MemberService;
 
 @SpringBootTest
@@ -18,13 +19,13 @@ public class MemberServiceTest {
     @Test
     @DisplayName("멤버 전체 조회")
     void testGetMemberList(){
-        List<Member> memberList = memberService.getMemberList();
-        memberList.stream().forEach(m -> System.out.println(m.toString()));
+        MemberListDto MemberListDto = memberService.getMemberList();
+        MemberListDto.getListData().stream().forEach(m -> System.out.println(m.toString()));
     }
 
     @Test
     @DisplayName("멤버 한건 조회")
-    void testGetMember(){
+    void testGetMember() throws Exception {
         String userId = "admin";
         Member member = memberService.getMember(userId);
         System.out.println(member.toString());

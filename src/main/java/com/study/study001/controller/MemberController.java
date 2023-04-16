@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.study.study001.domain.dto.Member;
+import com.study.study001.domain.dto.MemberListDto;
+import com.study.study001.domain.response.ApiResponse;
 import com.study.study001.service.MemberService;
 
 @RestController
@@ -20,13 +22,13 @@ public class MemberController {
     MemberService memberService;
 
     @GetMapping(value="/list")
-    public ResponseEntity<List<Member>> getMemberList(){
-        return ResponseEntity.ok().body(memberService.getMemberList());
+    public ResponseEntity<ApiResponse<MemberListDto>> getMemberList(){
+        return ResponseEntity.ok().body(ApiResponse.success(memberService.getMemberList()));
     }
     @GetMapping(value="/{userId}")
-    public ResponseEntity<Member> getMember(
+    public ResponseEntity<ApiResponse<Member>> getMember(
         @PathVariable("userId") String userId
-    ){
-        return ResponseEntity.ok().body(memberService.getMember(userId));
+    ) throws Exception {
+        return ResponseEntity.ok().body(ApiResponse.success(memberService.getMember(userId)));
     }
 }
