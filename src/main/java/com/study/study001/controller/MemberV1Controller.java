@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.study.study001.domain.dto.Member;
@@ -16,7 +17,7 @@ import com.study.study001.service.MemberService;
 
 @RestController
 @RequestMapping(value="/v1/member")
-public class MemberController {
+public class MemberV1Controller {
     
     @Autowired
     MemberService memberService;
@@ -25,9 +26,9 @@ public class MemberController {
     public ResponseEntity<ApiResponse<MemberListDto>> getMemberList(){
         return ResponseEntity.ok().body(ApiResponse.success(memberService.getMemberList()));
     }
-    @GetMapping(value="/{userId}")
+    @GetMapping(value="/info")
     public ResponseEntity<ApiResponse<Member>> getMember(
-        @PathVariable("userId") String userId
+        @RequestParam("id") String userId
     ) throws Exception {
         return ResponseEntity.ok().body(ApiResponse.success(memberService.getMember(userId)));
     }
