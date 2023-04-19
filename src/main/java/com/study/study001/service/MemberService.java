@@ -2,6 +2,7 @@ package com.study.study001.service;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,9 @@ public class MemberService {
 
     @Cacheable(value="studyCache")
     public Member getMember(String userId) throws Exception {   
-           return memberMapper.getMember(userId);
+        if(StringUtils.isEmpty(userId)){
+            throw new Exception();
+        }
+        return memberMapper.getMember(userId);
     }
 }

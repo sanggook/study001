@@ -12,6 +12,7 @@ public enum ServerStatusCode {
     // 404 NOT_FOUND 관련
     , FILE_NOT_FOUND(404, "존재하지 않는 파일입니다.")
     , API_NOT_FOUND(404, "존재하지 않는 API 주소입니다.")
+    , PRODUCT_NOT_FOUND(404, "존재하지 않는 상품 주소입니다.")
     
     // 500 INTERNAL_SERVER_ERROR 관련
     , INTERNAL_SERVER_ERROR(500, "서버에서 에러가 발생했습니다.")
