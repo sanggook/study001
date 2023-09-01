@@ -1,9 +1,13 @@
 # study001
 
-일단 생각나는대로 적용해보자
+## 점심 일기(가제)
+- 하루 식사 기록 하여 달력으로 확인할수 있는 간단한 프로젝트 진행.
 
+--------------------
+### 적용해볼것 
 - spring boot 3.0 이상
-- mybatis 적용
+- 무조건 테스트 코드 작성
+- mybatis 적용 (완료)
   - sqlSessionFactory가 아닌 @Mapper 어노테이션으로 적용
   - cache 적용 할수 있는지 체크
 - ehcache 적용
@@ -11,3 +15,13 @@
 - ExceptionHandler 적용
   - Response 타입에 따라 분기 가능한지 확인
 - swagger 적용
+- JPA 적용
+
+### 2023.09.01
+- JPA 적용 완료
+  
+- 멀티모듈 프로젝트로 변경 해두자
+  - 메인 API 모듈
+  - Mybatis 모듈
+  - JPA 모듈
+
