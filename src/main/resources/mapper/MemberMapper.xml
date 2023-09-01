@@ -4,26 +4,28 @@
 
     <select id="getMemberList" resultType="Member">
         SELECT 
-            SEQ
-            , ID
-            , MEMBER_NAME
-            , MEMBER_TAG
+            MNO
+            , MID
+            , MNAME
+            , MTAG
+            , JOIN_DATE
         FROM 
-            STUDY_MEMBER
+            MEMBER_T
         WHERE
             1=1            
     </select>
 
     <select id="getMember" resultType="Member">
-        SELECT 
-            SEQ
-            , ID
-            , MEMBER_NAME
-            , MEMBER_TAG
-        FROM 
-            STUDY_MEMBER
+        SELECT
+            MNO
+             , MID
+             , MNAME
+             , MTAG
+             , JOIN_DATE
+        FROM
+            MEMBER_T
         WHERE
             1=1
-            AND ID = #{userId}
+            AND MID = #{mId}
     </select>
 </mapper>

@@ -4,13 +4,16 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @ToString
 public class Member {
-    private int seq;
-    private String id;
-    
-    private String memberName;
-    private int memberTag;
+    private long mNo;
+    private String mId;
+    private String mName;
+    private String mTag;
+    private LocalDateTime joinDate;
+
 }

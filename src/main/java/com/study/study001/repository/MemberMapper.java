@@ -10,5 +10,5 @@ import com.study.study001.domain.dto.Member;
 public interface MemberMapper {
     List<Member> getMemberList();
 
-    Member getMember(String userId);
+    Member getMember(String mId);
 }
