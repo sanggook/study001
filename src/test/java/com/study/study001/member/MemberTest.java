@@ -15,8 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Sort;
 
-import javax.persistence.criteria.Order;
-
 @SpringBootTest
 public class MemberTest {
     @Autowired
@@ -44,17 +42,15 @@ public class MemberTest {
     void testGetMemberListForJPA(){
 
         List<MemberEntity> result = memberRepository.findAll(Sort.by(Sort.Order.asc("mNo")));
-        result.stream().forEach(m -> System.out.println(m.toString()));
-
-
+        result.forEach(m -> System.out.println(m.toString()));
     }
 
     @Test
     @DisplayName("멤버 한건 조회 JPA")
-    void testGetMemberForJPA() throws Exception {
+    void testGetMemberForJPA() {
         long id = 1L;
         Optional<MemberEntity> member = memberRepository.findById(id);
-        System.out.println(member.toString());
+        System.out.println(member);
     }
 
     @Test
@@ -67,8 +63,8 @@ public class MemberTest {
 
     @Test
     @DisplayName("멤버 전체 조회 Mybatis")
-    void testGetMemberListForMybaits(){
+    void testGetMemberListForMybatis(){
         MemberListDto MemberListDto = memberService.getMemberList();
-        MemberListDto.getListData().stream().forEach(m -> System.out.println(m.toString()));
+        MemberListDto.getListData().forEach(m -> System.out.println(m.toString()));
     }
 }
