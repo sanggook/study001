@@ -19,9 +19,14 @@
 
 ### 2023.09.01
 - JPA 적용 완료
-  
-- 멀티모듈 프로젝트로 변경 해두자
-  - 메인 API 모듈
-  - Mybatis 모듈
-  - JPA 모듈
 
+### 2023.09.02
+- 멀티모듈 프로젝트로 전환 완료
+  - API : 메인 비지니스 모듈
+  - COMMON : 공통 함수 및 상수 모음 모듈
+  - MYBATIS : mybatis 관련 모듈
+  - JPA : jpa 관련 모듈
+- JPA 모듈 테스트 코드 작성 완료
+  - 테스트용 SpringBootApplication 생성
+  - h2 메모리 DB 활용
+  - 테스트용 properties 생성
