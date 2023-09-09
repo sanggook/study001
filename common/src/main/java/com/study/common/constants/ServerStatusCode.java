@@ -1,8 +1,10 @@
 package com.study.common.constants;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+@Schema(description = "API 응답 코드 및 메세지")
 @AllArgsConstructor
 @Getter
 public enum ServerStatusCode {
