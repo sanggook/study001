@@ -2,10 +2,9 @@ package com.study.api.service;
 
 import java.util.List;
 
-import com.study.common.utils.NetworkUtil;
-import com.study.jpa.repository.MemberRepository;
+import com.study.jpa.dto.MemberDTO;
+import com.study.jpa.service.MemberTService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -20,15 +19,19 @@ public class MemberService {
 //    @Autowired
     private final MemberMapper memberMapper;
 
+    private final MemberTService memberTService;
+
     @Cacheable(value = "studyCache")
     public MemberListDto getMemberList(){
-        List<Member> memberList = memberMapper.getMemberList();
 
+
+        List<Member> memberList = memberMapper.getMemberList();
         return MemberListDto.builder().listData(memberList).totalCount(memberList.size()).build();
     }
 
     @Cacheable(value="studyCache")
-    public Member getMember(String userId) throws Exception {   
-           return memberMapper.getMember(userId);
+    public MemberDTO getMember(String userId) {
+        return memberTService.selectMemberById(userId);
+    //       return memberMapper.getMember(userId);
     }
 }

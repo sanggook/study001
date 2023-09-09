@@ -1,4 +1,4 @@
-package com.study.jpa.entity;
+package com.study.jpa.domain.entity;
 
 import lombok.*;
 
@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Table(name = "MEMBER_T")
 @Entity
-public class MemberEntity {
+public class MemberTEntity {
 
     @Id
     @Column(name = "MNO")

@@ -1,6 +1,7 @@
 package com.study.api.controller;
 
 import com.study.common.utils.NetworkUtil;
+import com.study.jpa.dto.MemberDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,10 +29,9 @@ public class MemberController {
         return ResponseEntity.ok().body(ApiResponse.success(memberService.getMemberList()));
     }
     @GetMapping(value="/{userId}")
-    public ResponseEntity<ApiResponse<Member>> getMember(
+    public ResponseEntity<ApiResponse<MemberDTO>> getMember(
         @PathVariable("userId") String userId
-    ) throws Exception {
-
+    ) {
         return ResponseEntity.ok().body(ApiResponse.success(memberService.getMember(userId)));
     }
 }
