@@ -30,3 +30,8 @@
   - 테스트용 SpringBootApplication 생성
   - h2 메모리 DB 활용
   - 테스트용 properties 생성
+
+### 2023.09.09
+- SWAGGER(springdoc) openApi 3.0 적용
+  - 뷰 모델에 대한 재정의 필요
+    - 엔티티 <-> DTO <-> view OR 엔티티 <-> DTO 고민..
